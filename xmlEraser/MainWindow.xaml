@@ -1,0 +1,20 @@
+﻿<Window x:Class="xmlEraser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:xmlEraser"
+        xmlns:props="clr-namespace:xmlEraser.Properties"
+        mc:Ignorable="d"
+        SnapsToDevicePixels="True"
+        x:Name="mainWindow"
+        Title="XML node eraser"  ResizeMode="NoResize" Width="491.946" Height="146.946" Closing="mainWindow_Closing" Icon="Resources/sc_logo_JwO_icon.ico" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button x:Name="button" Content="Remove" HorizontalAlignment="Left" Margin="318,80,0,0" VerticalAlignment="Top" Width="145" Click="button_Click"/>
+        <Label x:Name="label_Copy" Content="File path:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="filePath" Height="23" Margin="112,12,54,0" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Source={x:Static props:Settings.Default}, Path=FilePath, Mode=TwoWay}" VerticalAlignment="Top" IsReadOnly="True"/>
+        <Button x:Name="openFile" Content="..." HorizontalAlignment="Left" Margin="437,12,0,0" VerticalAlignment="Top" Width="26" Click="openFile_Click"/>
+        <Label x:Name="label_Copy1" Content="Request (XPath):" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbRequest" HorizontalAlignment="Stretch" Height="23" Margin="112,44,54,0" TextWrapping="Wrap" Text="{Binding Source={x:Static props:Settings.Default}, Path=Request, Mode=TwoWay}" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
