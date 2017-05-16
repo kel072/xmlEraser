@@ -19,7 +19,7 @@ Initial release
 
 ## License
 
-This software is owned or controlled by NXP Semiconductors.
+This software is owned or controlled by Michal Kelnar.
 Use of this software is governed by the BSD-3-Clause License distributed with this material.
  
 See the `LICENSE.txt` file distributed for more details.
