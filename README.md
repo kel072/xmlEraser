@@ -10,6 +10,8 @@ This project does not have any special requirements.
 
 Project build is fully provided by [Visual Studio Community 2017](https://www.visualstudio.com/downloads/).
 
+Prebuild packages are available at [github.io](https://kel072.github.io/).
+
 ## History
 
 ### v1.0.0
