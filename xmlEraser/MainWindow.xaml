@@ -8,13 +8,32 @@
         mc:Ignorable="d"
         SnapsToDevicePixels="True"
         x:Name="mainWindow"
-        Title="XML node eraser"  ResizeMode="NoResize" Width="491.946" Height="146.946" Closing="mainWindow_Closing" Icon="Resources/sc_logo_JwO_icon.ico" WindowStartupLocation="CenterScreen">
+        Title="XML node eraser"  ResizeMode="NoResize" Width="492" Height="190" Closing="mainWindow_Closing" Icon="Resources/sc_logo_JwO_icon.ico" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="button" Content="Remove" HorizontalAlignment="Left" Margin="318,80,0,0" VerticalAlignment="Top" Width="145" Click="button_Click"/>
-        <Label x:Name="label_Copy" Content="File path:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="filePath" Height="23" Margin="112,12,54,0" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Source={x:Static props:Settings.Default}, Path=FilePath, Mode=TwoWay}" VerticalAlignment="Top" IsReadOnly="True"/>
-        <Button x:Name="openFile" Content="..." HorizontalAlignment="Left" Margin="437,12,0,0" VerticalAlignment="Top" Width="26" Click="openFile_Click"/>
-        <Label x:Name="label_Copy1" Content="Request (XPath):" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbRequest" HorizontalAlignment="Stretch" Height="23" Margin="112,44,54,0" TextWrapping="Wrap" Text="{Binding Source={x:Static props:Settings.Default}, Path=Request, Mode=TwoWay}" VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="label_Copy" Grid.Column="1" Grid.Row="1" Content="XML z e-shopu" HorizontalAlignment="Left"/>
+        <Label x:Name="label_Copy1" Grid.Column="1" Grid.Row="3" Content="PDF položek prodeje:" HorizontalAlignment="Left"/>
+        
+        <Button x:Name="openFile" Grid.Column="2" Grid.Row="2" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="26" Click="openFile_Click"/>
+        <Button x:Name="openPdf" Grid.Column="2" Grid.Row="4" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="26" Click="openPdf_Click"/>
+        
+        <TextBox x:Name="filePath" Grid.Column="1" Grid.Row="2" Height="23" TextWrapping="Wrap" Text="{Binding Source={x:Static props:Settings.Default}, Path=FilePath, Mode=TwoWay}" VerticalAlignment="Top" IsReadOnly="True"/>
+        <TextBox x:Name="pdfPath" Grid.Column="1" Grid.Row="4"  Height="23" TextWrapping="Wrap" Text="{Binding Source={x:Static props:Settings.Default}, Path=PdfPath, Mode=TwoWay}" VerticalAlignment="Top" IsReadOnly="True"/>
+        
+        <Button x:Name="button" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Content="Remove" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="145" Click="button_Click"/>
     </Grid>
 </Window>

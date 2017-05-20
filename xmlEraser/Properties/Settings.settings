@@ -5,8 +5,8 @@
     <Setting Name="FilePath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="Request" Type="System.String" Scope="User">
-      <Value Profile="(Default)">/catalog/book[@id='bk102']</Value>
+    <Setting Name="PdfPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

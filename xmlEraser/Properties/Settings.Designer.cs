@@ -37,13 +37,13 @@ namespace xmlEraser.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("/catalog/book[@id=\'bk102\']")]
-        public string Request {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PdfPath {
             get {
-                return ((string)(this["Request"]));
+                return ((string)(this["PdfPath"]));
             }
             set {
-                this["Request"] = value;
+                this["PdfPath"] = value;
             }
         }
     }
