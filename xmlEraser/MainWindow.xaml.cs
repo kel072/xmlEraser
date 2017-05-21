@@ -11,7 +11,6 @@
 using System;
 using System.Windows;
 using System.Xml;
-using System.Xml.XPath;
 using System.Text.RegularExpressions;
 
 using org.apache.pdfbox.pdmodel;
@@ -37,9 +36,8 @@ namespace xmlEraser
                 doc = PDDocument.load(Properties.Settings.Default.PdfPath);
                 PDFTextStripper stripper = new PDFTextStripper();
                 string data = stripper.getText(doc);
-
-                Regex r = new Regex("FA\\d{8}", RegexOptions.IgnoreCase);
-                MatchCollection match = Regex.Matches(data, "FA\\d{8}");
+                
+                MatchCollection match = Regex.Matches(data, "FA\\d{8}", RegexOptions.IgnoreCase);
                 if (match.Count > 0)
                 {
                     try
@@ -83,30 +81,6 @@ namespace xmlEraser
                     doc.close();
                 }
             }
-
-            //if (this.tbRequest.Text != string.Empty)
-            //{
-            //    try
-            //    {
-            //        XPathExpression.Compile(tbRequest.Text);
-            //        Properties.Settings.Default.Save();
-
-            //        XmlDocument xml = new XmlDocument();
-            //        xml.Load(this.filePath.Text);
-            //        xml.Save(this.filePath.Text + ".backup");
-
-            //        foreach (XmlNode item in xml.SelectNodes(this.tbRequest.Text))
-            //        {
-            //            item.ParentNode.RemoveChild(item);
-            //        }
-
-            //        xml.Save(this.filePath.Text);
-            //    }
-            //    catch(Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message + "\nPlease check request XPath syntax.", "Error", MessageBoxButton.OK);
-            //    }
-            //}
         }
 
         private void openFile_Click(object sender, RoutedEventArgs e)
