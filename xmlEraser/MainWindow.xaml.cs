@@ -15,6 +15,7 @@ using System.Text.RegularExpressions;
 
 using org.apache.pdfbox.pdmodel;
 using org.apache.pdfbox.util;
+using System.Windows.Input;
 
 namespace xmlEraser
 {
@@ -30,7 +31,7 @@ namespace xmlEraser
         private void button_Click(object sender, RoutedEventArgs e)
         {
             PDDocument doc = null;
-
+            Mouse.OverrideCursor = Cursors.Wait;
             try
             {
                 doc = PDDocument.load(Properties.Settings.Default.PdfPath);
@@ -81,6 +82,7 @@ namespace xmlEraser
                     doc.close();
                 }
             }
+            Mouse.OverrideCursor = null;
         }
 
         private void openFile_Click(object sender, RoutedEventArgs e)

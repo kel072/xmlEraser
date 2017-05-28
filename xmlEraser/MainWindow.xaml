@@ -17,23 +17,36 @@
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="5"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
         <Label x:Name="label_Copy" Grid.Column="1" Grid.Row="1" Content="XML z e-shopu" HorizontalAlignment="Left"/>
         <Label x:Name="label_Copy1" Grid.Column="1" Grid.Row="3" Content="PDF položek prodeje:" HorizontalAlignment="Left"/>
-        
-        <Button x:Name="openFile" Grid.Column="2" Grid.Row="2" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="26" Click="openFile_Click"/>
-        <Button x:Name="openPdf" Grid.Column="2" Grid.Row="4" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="26" Click="openPdf_Click"/>
+
+        <Button x:Name="openFile" Grid.Column="2" Grid.Row="2" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="26" Click="openFile_Click" ToolTipService.IsEnabled="True">
+            <Button.ToolTip>
+                <TextBlock>Vybrat soubor...</TextBlock>
+            </Button.ToolTip>
+        </Button>
+        <Button x:Name="openPdf" Grid.Column="2" Grid.Row="4" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="26" Click="openPdf_Click" ToolTipService.IsEnabled="True">
+            <Button.ToolTip>
+                <TextBlock>Vybrat soubor...</TextBlock>
+            </Button.ToolTip>
+        </Button>
         
         <TextBox x:Name="filePath" Grid.Column="1" Grid.Row="2" Height="23" TextWrapping="Wrap" Text="{Binding Source={x:Static props:Settings.Default}, Path=FilePath, Mode=TwoWay}" VerticalAlignment="Top" IsReadOnly="True"/>
         <TextBox x:Name="pdfPath" Grid.Column="1" Grid.Row="4"  Height="23" TextWrapping="Wrap" Text="{Binding Source={x:Static props:Settings.Default}, Path=PdfPath, Mode=TwoWay}" VerticalAlignment="Top" IsReadOnly="True"/>
-        
-        <Button x:Name="button" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Content="Remove" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="145" Click="button_Click"/>
+
+        <Button x:Name="button" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" Content="Promazat" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="145" Click="button_Click" ToolTipService.IsEnabled="True">
+            <Button.ToolTip>
+                <TextBlock>Promazat databazi v XML na zaklade položek prodeje.</TextBlock>
+            </Button.ToolTip>
+        </Button>
     </Grid>
 </Window>
